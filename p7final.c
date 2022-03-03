@@ -46,7 +46,4 @@ int main()
   sum=add_fractions(f1,f2);
   output(f1,f2,sum);
   return 0;
-  
-  
-  
 }
