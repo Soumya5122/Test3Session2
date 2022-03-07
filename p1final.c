@@ -6,8 +6,7 @@ void input(int *num1, int *den1, int *num2, int *den2)
   printf("enter the fraction two a/b in the form a_b\n");
   scanf("%d%d",num2,den2);
 }
-int g
-cd(int a,int b)
+int gcd(int a,int b)
 {
   int t;
     while (b!=0)
