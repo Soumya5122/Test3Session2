@@ -1,1 +1,71 @@
+gcc -g p1final.c
+ ./a.out
+enter the fraction one a/b in the form a_b
+1 4
+enter the fraction two a/b in the form a_b
+1 2
+the sum of fractions 1/4 and 1/2 is given by 3/4
+ gdb a.out
+GNU gdb (Ubuntu 8.1.1-0ubuntu1) 8.1.1
+Copyright (C) 2018 Free Software Foundation, Inc.
+License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+and "show warranty" for details.
+This GDB was configured as "x86_64-linux-gnu".
+Type "show configuration" for configuration details.
+For bug reporting instructions, please see:
+<http://www.gnu.org/software/gdb/bugs/>.
+Find the GDB manual and other documentation resources online at:
+<http://www.gnu.org/software/gdb/documentation/>.
+For help, type "help".
+Type "apropos word" to search for commands related to "word"...
+Reading symbols from a.out...done.
+(gdb) b main
+Breakpoint 1 at 0x8da: file p1final.c, line 33.
+(gdb) r
+Starting program: /home/runner/Test3Session2-3/a.out 
+warning: Error disabling address space randomization: Operation not permitted
 
+Breakpoint 1, main () at p1final.c:33
+33  {
+(gdb) s
+35    input(&n1,&d1,&n2,&d2);
+(gdb) s
+input (num1=0x7ffeaf79d000, den1=0x7ffeaf79d00c, num2=0x7ffeaf79d004, 
+    den2=0x7ffeaf79d010) at p1final.c:4
+4     printf("enter the fraction one a/b in the form a_b\n");
+(gdb) n
+enter the fraction one a/b in the form a_b
+5     scanf("%d%d",num1,den1);
+(gdb) n
+1 4
+6     printf("enter the fraction two a/b in the form a_b\n");
+(gdb) n
+enter the fraction two a/b in the form a_b
+7     scanf("%d%d",num2,den2);
+(gdb) n
+1 2
+8   }
+(gdb) n
+main () at p1final.c:36
+36    add(n1,d1,n2,d2,&n3,&d3);
+(gdb) n
+37    output(n1,d1,n2,d2,n3,d3);
+(gdb) s
+output (num1=1, den1=4, num2=1, den2=2, num3=3, den3=4) at p1final.c:30
+30    printf("the sum of fractions %d/%d and %d/%d is given by %d/%d\n",num1,den1,num2,den2,num3,den3);
+(gdb) n
+the sum of fractions 1/4 and 1/2 is given by 3/4
+31  }
+(gdb) n
+main () at p1final.c:38
+38    return 0;
+(gdb) n
+39  }
+(gdb) q
+A debugging session is active.
+
+    Inferior 1 [process 719] will be killed.
+
+Quit anyway? (y or n) 
